@@ -1,5 +1,5 @@
 import type { Preview } from '@stencil/storybook-plugin';
-import { withThemeByClassName } from '@storybook/addon-themes';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 // Import global styles with design tokens
 import '../src/styles/index.css';
@@ -17,12 +17,13 @@ const preview: Preview = {
     },
   },
   decorators: [
-    withThemeByClassName({
+    withThemeByDataAttribute({
       themes: {
-        light: '',
-        dark: 'manta-dark',
+        light: 'light',
+        dark: 'dark',
       },
       defaultTheme: 'light',
+      attributeName: 'data-theme',
     }),
   ],
 };

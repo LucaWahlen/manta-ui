@@ -74,7 +74,9 @@
 
     <script>
       document.getElementById('theme-btn').addEventListener('click', () => {
-        document.documentElement.classList.toggle('manta-dark');
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        html.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
       });
     </script>
   </body>

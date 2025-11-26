@@ -140,18 +140,20 @@ The design tokens automatically adapt based on `prefers-color-scheme`:
 
 ### 2. Manual Toggle
 
-Add the `manta-dark` class or `data-theme="dark"` attribute to enable dark mode:
+Use the `data-theme` attribute to enable dark mode:
 
 ```html
-<html class="manta-dark">
-<!-- or -->
 <html data-theme="dark">
+<!-- or for light mode override -->
+<html data-theme="light">
 ```
 
 Toggle with JavaScript:
 
 ```js
-document.documentElement.classList.toggle('manta-dark');
+const html = document.documentElement;
+const currentTheme = html.getAttribute('data-theme');
+html.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
 ```
 
 ## Components
