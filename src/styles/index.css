@@ -1,0 +1,180 @@
+/**
+ * Manta UI - Global Styles
+ * 
+ * This is the main entry point for Manta UI styles.
+ * Import this file in your application to get access to design tokens and base styles.
+ * 
+ * Usage:
+ *   import 'manta-ui/dist/manta-ui/manta-ui.css';
+ * 
+ * Or link in HTML:
+ *   <link rel="stylesheet" href="path/to/manta-ui.css">
+ */
+
+/* Import Design Tokens */
+@import './tokens.css';
+
+/* ============================================
+ * CSS Reset / Normalize (Minimal)
+ * ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================
+ * Base Styles
+ * ============================================ */
+html {
+  font-family: var(--manta-font-family-base);
+  font-size: 16px;
+  line-height: var(--manta-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--manta-color-background);
+  color: var(--manta-color-text-primary);
+  transition: background-color var(--manta-transition-normal), color var(--manta-transition-normal);
+}
+
+/* ============================================
+ * Typography Base Styles
+ * ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--manta-spacing-sm);
+  font-weight: var(--manta-font-weight-semibold);
+  line-height: var(--manta-line-height-tight);
+  color: var(--manta-color-text-primary);
+}
+
+h1 {
+  font-size: var(--manta-font-size-4xl);
+}
+
+h2 {
+  font-size: var(--manta-font-size-3xl);
+}
+
+h3 {
+  font-size: var(--manta-font-size-2xl);
+}
+
+h4 {
+  font-size: var(--manta-font-size-xl);
+}
+
+h5 {
+  font-size: var(--manta-font-size-lg);
+}
+
+h6 {
+  font-size: var(--manta-font-size-md);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--manta-spacing-md);
+}
+
+a {
+  color: var(--manta-color-primary-500);
+  text-decoration: none;
+  transition: color var(--manta-transition-fast);
+}
+
+a:hover {
+  color: var(--manta-color-primary-700);
+  text-decoration: underline;
+}
+
+/* ============================================
+ * Focus Styles (Accessibility)
+ * ============================================ */
+:focus-visible {
+  outline: 2px solid var(--manta-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================
+ * Selection Styles
+ * ============================================ */
+::selection {
+  background-color: var(--manta-color-primary-200);
+  color: var(--manta-color-text-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: var(--manta-color-primary-700);
+    color: var(--manta-color-text-inverse);
+  }
+}
+
+/* ============================================
+ * Utility Classes
+ * ============================================ */
+
+/* Text Colors */
+.manta-text-primary {
+  color: var(--manta-color-text-primary);
+}
+
+.manta-text-secondary {
+  color: var(--manta-color-text-secondary);
+}
+
+.manta-text-success {
+  color: var(--manta-color-success);
+}
+
+.manta-text-warning {
+  color: var(--manta-color-warning);
+}
+
+.manta-text-error {
+  color: var(--manta-color-error);
+}
+
+/* Background Colors */
+.manta-bg-surface {
+  background-color: var(--manta-color-surface);
+}
+
+.manta-bg-surface-variant {
+  background-color: var(--manta-color-surface-variant);
+}
+
+/* Spacing Utilities */
+.manta-p-xs { padding: var(--manta-spacing-xs); }
+.manta-p-sm { padding: var(--manta-spacing-sm); }
+.manta-p-md { padding: var(--manta-spacing-md); }
+.manta-p-lg { padding: var(--manta-spacing-lg); }
+.manta-p-xl { padding: var(--manta-spacing-xl); }
+
+.manta-m-xs { margin: var(--manta-spacing-xs); }
+.manta-m-sm { margin: var(--manta-spacing-sm); }
+.manta-m-md { margin: var(--manta-spacing-md); }
+.manta-m-lg { margin: var(--manta-spacing-lg); }
+.manta-m-xl { margin: var(--manta-spacing-xl); }
+
+/* Border Radius Utilities */
+.manta-rounded-none { border-radius: var(--manta-radius-none); }
+.manta-rounded-sm { border-radius: var(--manta-radius-sm); }
+.manta-rounded-md { border-radius: var(--manta-radius-md); }
+.manta-rounded-lg { border-radius: var(--manta-radius-lg); }
+.manta-rounded-xl { border-radius: var(--manta-radius-xl); }
+.manta-rounded-full { border-radius: var(--manta-radius-full); }
+
+/* Shadow Utilities */
+.manta-shadow-none { box-shadow: var(--manta-shadow-none); }
+.manta-shadow-sm { box-shadow: var(--manta-shadow-sm); }
+.manta-shadow-md { box-shadow: var(--manta-shadow-md); }
+.manta-shadow-lg { box-shadow: var(--manta-shadow-lg); }
+.manta-shadow-xl { box-shadow: var(--manta-shadow-xl); }

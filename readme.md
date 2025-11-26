@@ -1,111 +1,206 @@
 [![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)](https://stenciljs.com)
 
-# Stencil Component Starter
+# Manta UI
 
-> This is a starter project for building a standalone Web Components using Stencil.
+A modern web component library with design tokens and dark mode support, built with Stencil.
 
-Stencil is a compiler for building fast web apps using Web Components.
+## Features
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than runtime tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements specification.
+- 🎨 **Design Tokens** - Consistent CSS custom properties for colors, spacing, typography, and more
+- 🌙 **Dark Mode** - Automatic support via `prefers-color-scheme` + manual toggle
+- 🧩 **Web Components** - Framework-agnostic components that work anywhere
+- 📦 **Tree-shakeable** - Import only the components you need
+- ♿ **Accessible** - Built with accessibility in mind
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all.
-
-## Getting Started
-
-To start building a new web component using Stencil, clone this repo to a new directory:
-
-```bash
-git clone https://github.com/stenciljs/component-starter.git my-component
-cd my-component
-git remote rm origin
-```
-
-and run:
+## Installation
 
 ```bash
-npm install
-npm start
+npm install manta-ui
 ```
 
-To build the component for production, run:
+## Usage
 
-```bash
-npm run build
+### 1. Import the Styles
+
+Import the global CSS that includes design tokens:
+
+```js
+// In your JavaScript/TypeScript entry file
+import 'manta-ui/css';
 ```
 
-To run the unit tests for the components, run:
-
-```bash
-npm test
-```
-
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
-
-## Naming Components
-
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
-
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the [Ionic-generated](https://ionicframework.com/) web components use the prefix `ion`.
-
-## Using this component
-
-There are two strategies we recommend for using web components built with Stencil.
-
-The first step for all two of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-You can read more about these different approaches in the [Stencil docs](https://stenciljs.com/docs/publishing).
-
-### Lazy Loading
-
-If your Stencil project is built with the [`dist`](https://stenciljs.com/docs/distribution) output target, you can import a small bootstrap script that registers all components and allows you to load individual component scripts lazily.
-
-For example, given your Stencil project namespace is called `my-design-system`, to use `my-component` on any website, inject this into your HTML:
+Or in HTML:
 
 ```html
-<script type="module" src="https://unpkg.com/my-design-system"></script>
-<!--
-To avoid unpkg.com redirects to the actual file, you can also directly import:
-https://unpkg.com/foobar-design-system@0.0.1/dist/foobar-design-system/foobar-design-system.esm.js
--->
-<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+<link rel="stylesheet" href="node_modules/manta-ui/dist/manta-ui/manta-ui.css" />
 ```
 
-This will only load the necessary scripts needed to render `<my-component />`. Once more components of this package are used, they will automatically be loaded lazily.
+### 2. Load Components
 
-You can also import the script as part of your `node_modules` in your applications entry file:
+**Lazy Loading (Recommended):**
 
-```tsx
-import 'foobar-design-system/dist/foobar-design-system/foobar-design-system.esm.js';
+```html
+<script type="module" src="https://unpkg.com/manta-ui"></script>
 ```
 
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-y6v26a?file=src%2Fmain.tsx).
+Or in your app:
 
-### Standalone
+```js
+import 'manta-ui';
+```
 
-If you are using a Stencil component library with `dist-custom-elements`, we recommend importing Stencil components individually in those files where they are needed.
+**Standalone Components:**
 
-To export Stencil components as standalone components make sure you have the [`dist-custom-elements`](https://stenciljs.com/docs/custom-elements) output target defined in your `stencil.config.ts`.
+```js
+import 'manta-ui/dist/components/manta-button.js';
+```
 
-For example, given you'd like to use `<my-component />` as part of a React component, you can import the component directly via:
+### 3. Use Components
 
-```tsx
-import 'foobar-design-system/my-component';
+```html
+<manta-button>Click Me</manta-button>
+<manta-button variant="secondary">Secondary</manta-button>
+<manta-button variant="danger" size="large">Delete</manta-button>
+```
 
-function App() {
-  return (
-    <>
-      <div>
-        <my-component
-          first="Stencil"
-          middle="'Don't call me a framework'"
-          last="JS"
-        ></my-component>
-      </div>
-    </>
-  );
+## Design Tokens
+
+Manta UI uses CSS custom properties (variables) for consistent styling. All tokens are prefixed with `--manta-`.
+
+### Colors
+
+```css
+/* Primary Colors */
+--manta-color-primary-500: #2196f3;
+
+/* Semantic Colors */
+--manta-color-success: #4caf50;
+--manta-color-warning: #ff9800;
+--manta-color-error: #f44336;
+--manta-color-info: #2196f3;
+
+/* Surface Colors */
+--manta-color-background: #ffffff;
+--manta-color-surface: #ffffff;
+
+/* Text Colors */
+--manta-color-text-primary: rgba(0, 0, 0, 0.87);
+--manta-color-text-secondary: rgba(0, 0, 0, 0.6);
+```
+
+### Spacing
+
+```css
+--manta-spacing-xs: 0.25rem;  /* 4px */
+--manta-spacing-sm: 0.5rem;   /* 8px */
+--manta-spacing-md: 1rem;     /* 16px */
+--manta-spacing-lg: 1.5rem;   /* 24px */
+--manta-spacing-xl: 2rem;     /* 32px */
+```
+
+### Typography
+
+```css
+--manta-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, ...;
+--manta-font-size-sm: 0.875rem;
+--manta-font-size-md: 1rem;
+--manta-font-size-lg: 1.125rem;
+```
+
+### Border Radius
+
+```css
+--manta-radius-sm: 0.125rem;
+--manta-radius-md: 0.25rem;
+--manta-radius-lg: 0.5rem;
+--manta-radius-full: 9999px;
+```
+
+### Shadows
+
+```css
+--manta-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--manta-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), ...;
+--manta-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), ...;
+```
+
+## Dark Mode
+
+Dark mode is supported in two ways:
+
+### 1. Automatic (System Preference)
+
+The design tokens automatically adapt based on `prefers-color-scheme`:
+
+```css
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles applied automatically */
 }
-
-export default App;
 ```
 
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-b6zuds?file=src%2FApp.tsx).
+### 2. Manual Toggle
+
+Add the `manta-dark` class or `data-theme="dark"` attribute to enable dark mode:
+
+```html
+<html class="manta-dark">
+<!-- or -->
+<html data-theme="dark">
+```
+
+Toggle with JavaScript:
+
+```js
+document.documentElement.classList.toggle('manta-dark');
+```
+
+## Components
+
+### manta-button
+
+A customizable button component.
+
+**Props:**
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `text` | `string` | - | Button text (or use slot) |
+| `variant` | `'primary' \| 'secondary' \| 'ghost' \| 'danger'` | `'primary'` | Visual style |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Button size |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | Button type |
+
+**Examples:**
+
+```html
+<manta-button>Primary</manta-button>
+<manta-button variant="secondary">Secondary</manta-button>
+<manta-button variant="ghost">Ghost</manta-button>
+<manta-button variant="danger">Danger</manta-button>
+<manta-button size="small">Small</manta-button>
+<manta-button size="large">Large</manta-button>
+<manta-button disabled>Disabled</manta-button>
+```
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+
+# Run Storybook
+npm run storybook
+```
+
+## License
+
+MIT
