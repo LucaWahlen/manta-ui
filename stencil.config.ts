@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'manta-ui',
+  globalStyle: 'src/styles/index.css',
   outputTargets: [
     {
       type: 'dist',

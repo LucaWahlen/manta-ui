@@ -1,3 +1,114 @@
 :host {
-  display: block;
+  display: inline-block;
+}
+
+button {
+  /* Base Styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--manta-spacing-sm);
+  
+  /* Typography */
+  font-family: var(--manta-font-family-base);
+  font-size: var(--manta-font-size-md);
+  font-weight: var(--manta-font-weight-medium);
+  line-height: var(--manta-line-height-normal);
+  
+  /* Sizing & Spacing */
+  padding: var(--manta-spacing-sm) var(--manta-spacing-md);
+  min-height: 2.5rem;
+  
+  /* Colors - Primary Variant */
+  background-color: var(--manta-color-primary-500);
+  color: var(--manta-color-text-inverse);
+  
+  /* Border */
+  border: 1px solid transparent;
+  border-radius: var(--manta-radius-md);
+  
+  /* Effects */
+  box-shadow: var(--manta-shadow-sm);
+  cursor: pointer;
+  transition: 
+    background-color var(--manta-transition-fast),
+    box-shadow var(--manta-transition-fast),
+    transform var(--manta-transition-fast);
+}
+
+button:hover {
+  background-color: var(--manta-color-primary-600);
+  box-shadow: var(--manta-shadow-md);
+}
+
+button:active {
+  background-color: var(--manta-color-primary-700);
+  transform: translateY(1px);
+  box-shadow: var(--manta-shadow-sm);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--manta-color-border-focus);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  background-color: var(--manta-color-neutral-300);
+  color: var(--manta-color-text-disabled);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Secondary Variant */
+:host([variant="secondary"]) button {
+  background-color: transparent;
+  color: var(--manta-color-primary-500);
+  border-color: var(--manta-color-primary-500);
+}
+
+:host([variant="secondary"]) button:hover {
+  background-color: var(--manta-color-primary-50);
+}
+
+:host([variant="secondary"]) button:active {
+  background-color: var(--manta-color-primary-100);
+}
+
+/* Ghost Variant */
+:host([variant="ghost"]) button {
+  background-color: transparent;
+  color: var(--manta-color-text-primary);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+:host([variant="ghost"]) button:hover {
+  background-color: var(--manta-color-surface-variant);
+}
+
+:host([variant="ghost"]) button:active {
+  background-color: var(--manta-color-neutral-200);
+}
+
+/* Danger Variant */
+:host([variant="danger"]) button {
+  background-color: var(--manta-color-error);
+  color: var(--manta-color-text-inverse);
+}
+
+:host([variant="danger"]) button:hover {
+  background-color: var(--manta-color-error-dark);
+}
+
+/* Size Variants */
+:host([size="small"]) button {
+  font-size: var(--manta-font-size-sm);
+  padding: var(--manta-spacing-xs) var(--manta-spacing-sm);
+  min-height: 2rem;
+}
+
+:host([size="large"]) button {
+  font-size: var(--manta-font-size-lg);
+  padding: var(--manta-spacing-md) var(--manta-spacing-lg);
+  min-height: 3rem;
 }

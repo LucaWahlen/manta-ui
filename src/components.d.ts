@@ -8,9 +8,29 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MantaButton {
         /**
+          * Whether the button is disabled
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * The button size
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
           * The text on the button
          */
         "text": string;
+        /**
+          * The button type
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * The button variant
+          * @default 'primary'
+         */
+        "variant": 'primary' | 'secondary' | 'ghost' | 'danger';
     }
     interface MyComponent {
         /**
@@ -48,9 +68,29 @@ declare global {
 declare namespace LocalJSX {
     interface MantaButton {
         /**
+          * Whether the button is disabled
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * The button size
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
           * The text on the button
          */
         "text"?: string;
+        /**
+          * The button type
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * The button variant
+          * @default 'primary'
+         */
+        "variant"?: 'primary' | 'secondary' | 'ghost' | 'danger';
     }
     interface MyComponent {
         /**

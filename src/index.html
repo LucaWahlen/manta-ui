@@ -3,12 +3,81 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Manta UI - Component Library</title>
 
     <script type="module" src="/build/manta-ui.esm.js"></script>
     <script nomodule src="/build/manta-ui.js"></script>
+    <link rel="stylesheet" href="/build/manta-ui.css" />
+    <style>
+      .demo-section {
+        padding: var(--manta-spacing-lg);
+        margin-bottom: var(--manta-spacing-lg);
+      }
+      .demo-section h2 {
+        margin-bottom: var(--manta-spacing-md);
+      }
+      .button-row {
+        display: flex;
+        gap: var(--manta-spacing-md);
+        flex-wrap: wrap;
+        margin-bottom: var(--manta-spacing-md);
+      }
+      .theme-toggle {
+        position: fixed;
+        top: var(--manta-spacing-md);
+        right: var(--manta-spacing-md);
+        z-index: var(--manta-z-index-fixed);
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+    <div class="theme-toggle">
+      <manta-button variant="ghost" id="theme-btn">Toggle Dark Mode</manta-button>
+    </div>
+    
+    <div class="demo-section">
+      <h1>Manta UI</h1>
+      <p class="manta-text-secondary">A modern web component library with design tokens and dark mode support.</p>
+    </div>
+
+    <div class="demo-section">
+      <h2>Button Variants</h2>
+      <div class="button-row">
+        <manta-button>Primary</manta-button>
+        <manta-button variant="secondary">Secondary</manta-button>
+        <manta-button variant="ghost">Ghost</manta-button>
+        <manta-button variant="danger">Danger</manta-button>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Button Sizes</h2>
+      <div class="button-row">
+        <manta-button size="small">Small</manta-button>
+        <manta-button size="medium">Medium</manta-button>
+        <manta-button size="large">Large</manta-button>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Disabled State</h2>
+      <div class="button-row">
+        <manta-button disabled>Disabled</manta-button>
+        <manta-button variant="secondary" disabled>Disabled Secondary</manta-button>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Example Component</h2>
+      <my-component first="Manta" middle="UI" last="Framework"></my-component>
+    </div>
+
+    <script>
+      document.getElementById('theme-btn').addEventListener('click', () => {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        html.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    </script>
   </body>
 </html>
